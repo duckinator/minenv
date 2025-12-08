@@ -1,0 +1,5 @@
+test_task:
+  container:
+    image: rust:slim
+  script:
+    - cargo test

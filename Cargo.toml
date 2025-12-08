@@ -1,0 +1,12 @@
+[package]
+name = "minenv"
+version = "1.0.0"
+description = "it handles .env files, falling back to environment variables, in 50 lines of code instead of 1,500"
+edition = "2024"
+license = "MIT"
+categories = ["configuration"]
+homepage = "https://github.com/duckinator/minenv"
+keywords = ["dotenv", "env", "environment"]
+
+
+[dependencies]

@@ -19,14 +19,8 @@ pub fn load(file: &str) -> Result<Env, Box<dyn std::error::Error>> {
 
     let mut data: HashMap<String, String> = HashMap::new();
     for line in contents.split_terminator("\n") {
-        let line =
-            if let Some(idx) = line.find('#') {
-                line.split_at(idx).0
-            } else {
-                line
-            };
-
-        if line.trim().is_empty() {
+        let line = line.splitn(2, '#').next().unwrap_or("").trim();
+        if line.is_empty() {
             continue;
         }
 

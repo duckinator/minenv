@@ -1,6 +1,7 @@
 use minenv;
 
-fn main() {
-    let env = minenv::load("test.env").expect("expected test.env to be valid");
-    println!("foo={}", env.var("foo").expect("expected $foo to be defined"));
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let env = minenv::load("test.env")?;
+    println!("foo={}", env.var("foo").ok_or("expected $foo to be defined")?);
+    Ok(())
 }

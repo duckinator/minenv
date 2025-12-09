@@ -1,7 +1,7 @@
 [package]
 name = "minenv"
 version = "1.0.0"
-description = "it handles .env files, falling back to environment variables, in 50 lines of code instead of 1,500"
+description = "access env vars, falling back to a sapecified .env file, in 50 lines of code instead of 1,500"
 edition = "2024"
 license = "MIT"
 categories = ["config"]

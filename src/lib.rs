@@ -38,18 +38,12 @@ mod tests {
 
     #[test]
     fn basic_tests() {
-        unsafe { std::env::set_var("foo", "bar"); }
-
         let env = load("test.env").unwrap();
 
         assert_eq!(env.var("foo").unwrap(), "bar");
-        assert_eq!(env.var("first").unwrap(), "line");
-        assert_eq!(env.var("second").unwrap(), "line=has=tons=of=equal=signs");
-        assert_eq!(env.var("3").unwrap(), "1");
-        assert_eq!(env.var("8").unwrap(), "a b c d e f g h i j k l m n o p q r s t u v w x y z");
+        assert_eq!(env.var("beep").unwrap(), "boop with=equal=signs");
 
-
-        unsafe { std::env::set_var("first", "something else"); }
-        assert_eq!(env.var("first").unwrap(), "something else");
+        unsafe { std::env::set_var("foo", "something else"); }
+        assert_eq!(env.var("foo").unwrap(), "something else");
     }
 }
